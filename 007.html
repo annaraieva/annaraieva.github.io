@@ -2,18 +2,85 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <title>Домашка 007</title>
+    <style>
+      body {
+        justify-content: center;
+        align-items: center;
+      }
+      label {
+  font:
+    1rem 'Fira Sans',
+    sans-serif;
+}
+    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>Приветики!</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
       deleniti.
     </p>
-    <button>Click me!</button>
-    <input type="range" />
-    <input type="radio" />
-    <input type="text" />
-    <input type="password" />
-  </body>
+    <button>Жмякни меня!</button>
+<div>
+  <p>Регистрация, пупсики</p>
+
+  <label for="username">Username</label>
+  <input type="username" /> <br /><!--/* hallo!*/ -->
+
+  <label for="email">Email adress</label>
+  <input type="email"> <br /><!--/* обязательное поле ввода мыла*/ -->
+
+  <label for="password">Password</label>
+  <input type="password"> <br /><!--/* атрибуты minlength и maxlength, чтобы указать минимальную и максимальную длину значения*/ -->
+</div>
+<div>
+    <form action="#" method="post">
+      <label for="range"></label>
+      <input type="range" /> <br /> <!--/* атрибуты max i min, step*/ -->
+      
+</form>
+</div>
+<fieldset>
+  <legend>Выберете пол:</legend>
+
+  <div>
+    <input type="radio" id="huey" name="drone" value="huey" checked />
+    <label for="huey">женщина &#128131;</label>
+  </div>
+
+  <div>
+    <input type="radio" id="dewey" name="drone" value="dewey" />
+    <label for="dewey">мужчина&#128378;</label>
+  </div>
+
+  <div>
+    <input type="button" class="emoji-button" value="&#128062;" id="louie" name="drone" value="louie" />
+    <label for="louie">у меня лапки</label>
+  </div>
+</fieldset>
+<div>
+      <label for="color">Выбери любимый цвет:</label>
+      <input type="color"> <br /><!--/* элемент управления цветом*/ -->
+
+      <label for="date">Введите дату регистрации:</label>
+      <input type="date"> <br /><!--/* ввод даты*/ -->
+
+      <label for="avatar">Выберете фото профиля:</label>
+      <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" /><br /><!--/* можно выбрать файл, используй accept для выбора типа файла*/ -->
+      
+      <label for="reset"></label>
+      <input type="reset"> <br />
+
+      <label for="text">Расскажите о себе</label>
+      <input type="text"> <br />
+
+      <label for="url">Ссылка на ваши социальные сети:</label>
+      <input type="url"> <br />
+
+      <label for="checkbox">Подписаться на рассылку
+      <input type="checkbox" name="subscribe" value="newsletter"></label>
+
+</div>
+</body>
 </html>

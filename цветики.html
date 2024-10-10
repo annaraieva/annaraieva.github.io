@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Определение настроения по цвету</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Цвета кнопок */
+        .red { background-color: #ff0000; }
+        .green { background-color: #00ff00; color: #000; }
+        .blue { background-color: #0000ff; }
+        .yellow { background-color: #ffff00; color: #000; }
+        .orange { background-color: #ffa500; }
+        .purple { background-color: #800080; }
+
+        /* Анимация для изменения текста при клике */
+        @keyframes changeText {
+            0% {
+                content: attr(data-original-text);
+            }
+            20% {
+                content: attr(data-mood-text);
+            }
+            80% {
+                content: attr(data-mood-text);
+            }
+            100% {
+                content: attr(data-original-text);
+            }
+        }
+
+        /* Анимация при клике */
+        .color-button:active::before {
+            content: attr(data-mood-text);
+            animation: changeText 2s forwards;
+        }
+
+        /* Используем псевдо-элемент ::before для отображения текста */
+        .color-button::before {
+            content: attr(data-original-text);
+            display: inline-block;
+        }
+
+        /* Убираем исходный текст кнопки */
+        .color-button {
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Определите свое настроение</h1>
+
+        <button class="color-button red" data-original-text="Красный" data-mood-text="Энергичный"></button>
+        <button class="color-button green" data-original-text="Зеленый" data-mood-text="Спокойный"></button>
+        <button class="color-button blue" data-original-text="Синий" data-mood-text="Грустный"></button>
+        <button class="color-button yellow" data-original-text="Желтый" data-mood-text="Счастливый"></button>
+        <button class="color-button orange" data-original-text="Оранжевый" data-mood-text="Воодушевленный"></button>
+        <button class="color-button purple" data-original-text="Фиолетовый" data-mood-text="Загадочный"></button>
+    </div>
+</body>
+</html>
