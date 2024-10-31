@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+@function values($min-value, $max-value, $min-viewport, $max-viewport) {
+    $min-width-value: $min-value / 1px;
+    $max-width-value: $max-value / 1px;
+    $min-viewport-value: $min-viewport / 1px;
+    $max-viewport-value: $max-viewport / 1px;
+
+ @return calc(#{$min-width-value}px + (#{$max-width-value}-#{$min-width-value})* ((100vw - #{$min-viewport-value}px) / (#{$max-view}))!!!!!!!!!!!!!!!!!!!
+
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.working-process {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.step {
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.2em;
+    background-color: #f4f4f4;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.step-header:hover {
+    background-color: #a5e28d; /* Зеленый цвет при наведении */
+}
+
+.step-number {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.step-title {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.toggle-icon {
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.step-content {
+    padding: 15px 20px;
+    background-color: #e8f9e8;
+    display: none;
+}
+
+/* Скрываем чекбоксы */
+.toggle-checkbox {
+    display: none;
+}
+
+/* Раскрываем контент и меняем значок при активном чекбоксе */
+.toggle-checkbox:checked + .step-header {
+    background-color: #a5e28d; /* Зеленый цвет для раскрытого блока */
+}
+
+.toggle-checkbox:checked + .step-header .toggle-icon {
+    transform: rotate(45deg); /* Меняем "+" на "минус" */
+    content: "-";
+}
+
+.toggle-checkbox:checked ~ .step-content {
+    display: block;
+}
